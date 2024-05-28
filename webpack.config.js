@@ -53,6 +53,12 @@ module.exports = [
                 use: ['@svgr/webpack', 'url-loader'],
             }
             ]
-        }
+        },
+        devServer: {
+            static: path.join(__dirname, "dist"),
+            compress: true,
+            port: 3000,
+            historyApiFallback: true,
+        },
     }
 ]

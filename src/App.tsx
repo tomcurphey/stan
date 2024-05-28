@@ -1,25 +1,22 @@
 import React from "react";
-import "./styles.css";
-import { Routes, Route } from "react-router-dom";
-import { Home, Program, NotFound } from "./pages";
-import { Layout } from "./components";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Layout } from "./components/layout";
+import { Home, NotFound, Program } from "./pages";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "/:id", element: <Program /> },
+      { path: "*", element: <NotFound /> },
+    ],
+  },
+]);
 
 const App = () => {
-  return (
-    <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="program" element={<Program />} />
-
-          {/* Using path="*"" means "match anything", so this route
-                acts like a catch-all for URLs that we don't have explicit
-                routes for. */}
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

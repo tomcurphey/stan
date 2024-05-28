@@ -1,5 +1,11 @@
 import React from "react";
+import * as S from "./Home.styles";
+import { Carousel } from "../../components/carousel/Carousel";
 
 export const Home = () => {
-  return <div className="container">Home</div>;
+  return (
+    <S.Container>
+      <Carousel />
+    </S.Container>
+  );
 };

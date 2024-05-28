@@ -40,7 +40,7 @@ export const GlobalStyle = createGlobalStyle`
   --background: #101010;
 
   --grey: #888888; /* Navbar */
-  --grey-darker: #606060; /* Loading & Not Found Text */
+  --grey-dark: #606060; /* Loading & Not Found Text */
 
   --blue: #4097fe; /* Border */
   --blue-dark: #376ee5; /* Exclusives */
@@ -57,6 +57,7 @@ export const GlobalStyle = createGlobalStyle`
   --s: 1.2rem;
   --m: 1.4rem;
   --d: 1.6rem;
+  --e: 1.8rem;
   --l: 2rem;
   --xl: 2.4rem;
   --xxl: 2.8rem;
