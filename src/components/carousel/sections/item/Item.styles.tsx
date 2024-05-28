@@ -3,11 +3,14 @@ import styled from "styled-components";
 
 interface IContainerProps {
   $isActive?: boolean;
+  $isLoading?: boolean;
   $useKeys?: boolean;
 }
 
+const width = "16vw";
+
 export const Container = styled.div<IContainerProps>`
-  width: 100%;
+  flex: 0 0 auto;
   border: 2px solid
     ${({ $isActive = false, $useKeys = false }) =>
       $useKeys && $isActive ? "var(--blue)" : "var(--background)"};
@@ -15,6 +18,13 @@ export const Container = styled.div<IContainerProps>`
   margin: var(--t);
   outline: none;
   box-shadow: none;
+  width: ${width};
+  height: ${({ $isLoading = false }) =>
+    $isLoading ? `calc(${width} * 1.5)` : "auto"};
+  min-width: 207px;
+  min-height: 307px;
+  background-color: ${({ $isLoading = false }) =>
+    $isLoading ? "var(--grey-dark)" : "var(--background)"};
 
   &:focus,
   &:focus-visible {
@@ -31,9 +41,13 @@ export const Container = styled.div<IContainerProps>`
   }
 `;
 
-export const StyledLink = styled(Link)``;
+export const StyledLink = styled(Link)`
+  display: block;
+  width: 100%;
+  height: 100%;
+`;
 
 export const Image = styled.img`
-  max-width: 207px;
-  max-height: 307px;
+  width: 100%;
+  height: auto;
 `;

@@ -3,23 +3,44 @@ import * as S from "./Item.styles";
 import { CarouselData } from "../../types";
 
 interface IItemProps {
-  data: CarouselData;
-  isLoading?: boolean;
-  isActive: boolean;
-  tabIndex: number;
-  $useKeys: boolean;
-  onKeyDown: (e: React.KeyboardEvent<HTMLDivElement>) => void;
+  data?: CarouselData;
+  isActive?: boolean;
+  tabIndex?: number;
+  $isLoading?: boolean;
+  $useKeys?: boolean;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLDivElement>) => void;
+  onFocus?: () => void;
 }
 
 export const Item = forwardRef<HTMLDivElement, IItemProps>(
-  ({ data, isLoading, isActive, tabIndex, $useKeys, onKeyDown }, ref) => {
-    if (isLoading) return <S.Container>Loading</S.Container>;
+  (
+    {
+      data,
+      isActive = false,
+      tabIndex,
+      $isLoading = false,
+      $useKeys = false,
+      onKeyDown,
+      onFocus,
+    },
+    ref
+  ) => {
+    if ($isLoading || !data) return <S.Container $isLoading />;
+
+    const handleFocus = () => {
+      onFocus && onFocus();
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+      onKeyDown && onKeyDown(e);
+    };
 
     return (
       <S.Container
         $isActive={isActive}
         tabIndex={tabIndex}
-        onKeyDown={onKeyDown}
+        onKeyDown={handleKeyDown}
+        onFocus={handleFocus}
         aria-current={isActive ? "true" : undefined}
         aria-selected={isActive ? "true" : undefined}
         ref={ref}

@@ -4,7 +4,7 @@ import { s } from "../../utils/strings";
 
 export const NotFound = () => {
   useEffect(() => {
-    console.log("NotFound component mounted");
+    console.log("Not Found component mounted");
   }, []);
 
   return (

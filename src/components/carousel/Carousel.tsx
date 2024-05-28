@@ -10,7 +10,7 @@ export const Carousel = () => {
   const [data, setData] = useState<CarouselData[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [activeIndex, setActiveIndex] = useState<number | null>(0); // Allow null for no active index
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
   const [useKeys, setUseKeys] = useState(false);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
   const itemsRef = useRef<HTMLDivElement>(null);
@@ -79,7 +79,30 @@ export const Carousel = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    const loadingArray = Array.from({ length: 10 }, (_, i) => i);
+
+    return (
+      <S.Container
+        ref={itemsRef}
+        onBlur={handleItemsBlur}
+        onFocus={handleFocus}
+        $isLoading
+      >
+        <S.Items>
+          {loadingArray?.map((d, index) => (
+            <Item
+              key={d}
+              $isLoading
+              isActive={index === activeIndex}
+              $useKeys={useKeys}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              onFocus={() => setActiveIndex(index)}
+              tabIndex={index === activeIndex ? 0 : -1}
+            />
+          ))}
+        </S.Items>
+      </S.Container>
+    );
   }
 
   if (error) {
@@ -100,6 +123,7 @@ export const Carousel = () => {
             isActive={index === activeIndex}
             $useKeys={useKeys}
             onKeyDown={(e) => handleKeyDown(e, index)}
+            onFocus={() => setActiveIndex(index)}
             tabIndex={index === activeIndex ? 0 : -1}
             ref={(el) => (itemRefs.current[index] = el)}
           />

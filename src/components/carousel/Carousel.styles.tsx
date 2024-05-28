@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+interface IContainerProps {
+  $isLoading?: boolean;
+}
+
+export const Container = styled.div<IContainerProps>`
   overflow: hidden;
-  overflow-x: scroll;
+  overflow-x: ${({ $isLoading }) => ($isLoading ? "hidden" : "scroll")};
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
   border: 2px solid var(--background);
