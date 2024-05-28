@@ -186,7 +186,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \*********************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\n__webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\nvar App = function () {\n    return (react_1.default.createElement(\"div\", null,\n        react_1.default.createElement(\"h1\", null, \"Hello\")));\n};\nexports[\"default\"] = App;\n\n\n//# sourceURL=webpack://stan/./src/App.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\n__webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\nvar App = function () {\n    return (react_1.default.createElement(\"div\", null,\n        react_1.default.createElement(\"h1\", null, \"Stan\")));\n};\nexports[\"default\"] = App;\n\n\n//# sourceURL=webpack://stan/./src/App.tsx?");
 
 /***/ }),
 
