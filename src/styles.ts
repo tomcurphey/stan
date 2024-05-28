@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
@@ -173,3 +176,4 @@ a:hover {
 a:active {
   text-decoration: none;
 }
+`;

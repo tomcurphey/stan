@@ -1,13 +1,17 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
 import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { GlobalStyle } from "./styles";
 
-const rootElement = document.querySelector("#root");
+const rootElement = document.getElementById("root");
 if (!rootElement) throw new Error("Cannot find root element with that ID");
 
-const root = createRoot(rootElement);
-root.render(
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <GlobalStyle />
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
