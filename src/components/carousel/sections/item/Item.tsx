@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import * as S from "./Item.styles";
-import { CarouselData } from "../../types";
+import { CarouselData } from "../../../../assets/data/dataTypes";
 
 interface IItemProps {
   data?: CarouselData;

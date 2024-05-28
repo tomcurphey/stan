@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+interface IStyledLinkProps {
+  $highlight: boolean;
+}
+
 export const Container = styled.div`
   padding: var(--p50);
 `;
@@ -21,10 +25,11 @@ export const NavItem = styled.ul`
   }
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)<IStyledLinkProps>`
   display: inline-block;
   padding: var(--s) var(--xl);
-  color: var(--grey);
+  color: ${({ $highlight }) => ($highlight ? "var(--white)" : "var(--grey)")};
+  font-weight: var(--semibold);
   text-decoration: none;
   border: 2px solid transparent;
   border-radius: 4px;

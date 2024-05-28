@@ -2,9 +2,12 @@ import React from "react";
 import * as S from "./Navbar.styles";
 import { r } from "../../utils/routes";
 import logo from "../../assets/icons/logo.svg";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export const Navbar = () => {
+  const { pathname } = useLocation();
+
+  console.log("location", location);
   const links = [r.home, r.tvShows, r.movies];
   return (
     <S.Container>
@@ -15,7 +18,9 @@ export const Navbar = () => {
         <S.NavItem>
           {links.map((l, idx) => (
             <S.ListItem key={idx} tabIndex={0}>
-              <S.StyledLink to={l.path}>{l.label}</S.StyledLink>
+              <S.StyledLink to={l.path} $highlight={pathname === l.path}>
+                {l.label}
+              </S.StyledLink>
             </S.ListItem>
           ))}
         </S.NavItem>

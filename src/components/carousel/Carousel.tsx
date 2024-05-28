@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef } from "react";
 import * as S from "./Carousel.styles";
 import * as L from "../layout/Layout.styles";
 import jsonData from "../../assets/data/data.json";
-import { CarouselData } from "./types";
 import { Item } from "./sections";
 import { useNavigate } from "react-router-dom";
+import { CarouselData } from "../../assets/data/dataTypes";
 
 export const Carousel = () => {
   const [data, setData] = useState<CarouselData[] | null>(null);
