@@ -1,3 +1,10 @@
+# How to start
+
+1. git clone https://github.com/tomcurphey/stan.git
+1. npm install
+1. npm run dev: This will build the project then run it locally with hot reloading
+1. npm run test: This will run the tests I built
+
 # Comments
 
 1. From a UI perspective on the Program.jpg / page the MA15+ line needs a different font color, I'd personally use the grey.
