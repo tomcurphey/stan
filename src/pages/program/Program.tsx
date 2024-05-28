@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import jsonData from "../../assets/data/data.json"; // Assuming jsonData is an array of objects
+import jsonData from "../../assets/data/data.json";
 import * as S from "./Program.styles";
 import * as L from "../../components/layout/Layout.styles";
 import { CarouselData } from "../../assets/data/dataTypes";
@@ -46,12 +46,7 @@ export const Program: React.FC = () => {
     };
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   if (error) {
-    console.log("Error:", error);
     return (
       <S.Container>
         <L.ErrorMessage>{s.errorMessage}</L.ErrorMessage>

@@ -11,8 +11,4 @@ export const r = {
     label: "Movies",
     path: "/movies",
   },
-  program: {
-    label: "Program",
-    path: "/program",
-  },
 };

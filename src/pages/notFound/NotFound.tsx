@@ -3,10 +3,6 @@ import * as S from "./NotFound.styles";
 import { s } from "../../utils/strings";
 
 export const NotFound = () => {
-  useEffect(() => {
-    console.log("Not Found component mounted");
-  }, []);
-
   return (
     <S.Container>
       <p className="errorMessage">{s.errorMessage}</p>

@@ -6,9 +6,8 @@ import { useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const { pathname } = useLocation();
-
-  console.log("location", location);
   const links = [r.home, r.tvShows, r.movies];
+
   return (
     <S.Container>
       <S.Nav>
