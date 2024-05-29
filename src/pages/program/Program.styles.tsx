@@ -10,15 +10,15 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   padding: 0 var(--p50) var(--p50);
-  max-width: 1200px;
+  max-width: var(--max-content-width);
 `;
 
 export const Left = styled.div<ILoadingProps>`
   width: ${width};
   height: ${({ $isLoading = false }) =>
     $isLoading ? `calc(${width} * 1.5)` : "auto"};
-  min-width: 207px;
-  min-height: 307px;
+  min-width: var(--carousel-item-min-width);
+  min-height: var(--carousel-item-min-height);
   margin-right: var(--p50);
 `;
 

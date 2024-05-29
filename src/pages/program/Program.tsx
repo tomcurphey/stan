@@ -72,7 +72,8 @@ export const Program: React.FC = () => {
         <S.Details $isLoading={loading}>
           {details.map((d, idx) => (
             <S.Detail key={idx}>
-              {d} {idx + 1 !== details.length && "|"}
+              <span>{d}</span>
+              {idx + 1 !== details.length && <span>|</span>}
             </S.Detail>
           ))}
         </S.Details>

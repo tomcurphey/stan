@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import * as S from "./NotFound.styles";
 import { s } from "../../utils/strings";
 

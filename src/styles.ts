@@ -77,46 +77,13 @@ export const GlobalStyle = createGlobalStyle`
   --semibold: 600;
   --bold: 700;
 
-  /* navbar */
+  /* Layout */
   /* ----------------------------------------- */
-  --navbar-width: 275px;
-  --navbar-header-height: 50px;
+  --carousel-item-min-width: 20.7rem;
+  --carousel-item-min-height: 30.7rem;
+  --max-content-width: 120rem
 
-  /* border */
-  /* ----------------------------------------- */
-  --border-radius-xsmall: 4px;
-  --border-radius-small: 8px;
-  --border-radius-medium: 12px;
-  --border-radius-large: 20px;
-  --border-radius-xlarge: 30px;
-  --border-radius-xxlarge: 40px;
 
-  /* shadow */
-  /* ----------------------------------------- */
-  --box-black-tiny: 0px 0px 2px var(--black);
-  --box-black-small: 0px 2px 4px var(--black);
-  --box-white-small: 0px 10px 30px rgba(255, 255, 255, 0.2);
-  --box-white-xlarge: 0px 0px 150px rgba(255, 255, 255, 0.3);
-
-  /* z-index */
-  /* ----------------------------------------- */
-  --z10: 10;
-  --z8: 8;
-  --z5: 5;
-  --z3: 3;
-  --z2: 2;
-  --z1: 1;
-
-  /* buttonWidth */
-  /* ----------------------------------------- */
-  --button-l-width: 220px;
-  --button-m-width: 180px;
-  --button-s-width: 80px;
-
-  --button-xl-height: 60px;
-  --button-l-height: 50px;
-  --button-m-height: 35px;
-  --button-s-height: 20px;
 }
 
 * {

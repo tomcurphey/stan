@@ -32,10 +32,9 @@ export const StyledLink = styled(Link)<IStyledLinkProps>`
   font-weight: var(--semibold);
   text-decoration: none;
   border: 2px solid transparent;
-  border-radius: 4px;
 `;
 
-export const ListItem = styled.div`
+export const ListItem = styled.li`
   .link {
     font-size: var(--l);
   }
@@ -50,9 +49,9 @@ export const ListItem = styled.div`
   }
 
   &:focus-visible {
-    outline: 2px solid #0056b3;
+    outline: 2px solid var(--blue-dark);
     outline-offset: 2px;
-    border: none; /* Remove border if any */
-    box-shadow: none; /* Remove any box-shadow */
+    border: none;
+    box-shadow: none;
   }
 `;

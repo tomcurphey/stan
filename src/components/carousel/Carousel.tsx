@@ -37,7 +37,7 @@ export const Carousel = () => {
   }, [activeIndex]);
 
   useEffect(() => {
-    if (itemRefs.current[0]) {
+    if (itemRefs.current[0] && !loading) {
       itemRefs.current[0]?.focus();
     }
   }, [loading]);

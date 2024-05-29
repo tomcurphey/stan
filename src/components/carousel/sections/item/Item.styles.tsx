@@ -21,8 +21,8 @@ export const Container = styled.div<IContainerProps>`
   width: ${width};
   height: ${({ $isLoading = false }) =>
     $isLoading ? `calc(${width} * 1.5)` : "auto"};
-  min-width: 207px;
-  min-height: 307px;
+  min-width: var(--carousel-item-min-width);
+  min-height: var(--carousel-item-min-height);
   background-color: ${({ $isLoading = false }) =>
     $isLoading ? "var(--grey-dark)" : "var(--background)"};
 

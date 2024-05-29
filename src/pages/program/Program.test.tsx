@@ -71,6 +71,11 @@ describe("Program Component", () => {
 
     expect(screen.getByAltText("Item 1")).toBeInTheDocument();
     expect(screen.getByText("Item 1")).toBeInTheDocument();
+    expect(screen.getByText("4")).toBeInTheDocument();
+    expect(screen.getByText("2021")).toBeInTheDocument();
+    expect(screen.getByText("Type1")).toBeInTheDocument();
+    expect(screen.getByText("Genre1")).toBeInTheDocument();
+    expect(screen.getByText("Language1")).toBeInTheDocument();
     expect(screen.getByText("Description 1")).toBeInTheDocument();
   });
 
